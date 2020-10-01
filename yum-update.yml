@@ -1,0 +1,16 @@
+---
+
+- name: VM Update
+  gather_facts: false
+  hosts: all
+  tasks:
+    
+  - name: Upgrade all packages
+    yum:
+      name: '*'
+      state: latest
+  
+  - name: Install Nginx
+    yum:
+      name: 'nginx'
+      state: latest
